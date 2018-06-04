@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
-	<script src = "../Js/validateRegistrationForm.js"></script>
-	<link rel="stylesheet" href = "../Css/form_style.css">
+	<script src = "..assets/js/validateRegistrationForm.js"></script>
+	<link rel="stylesheet" href = "../assets/css/form_style.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
@@ -91,7 +91,6 @@
 	</div>
 
 		<cfif isDefined("form.SaveChanges") >
-
 			<cfset formData = CreateObject("Component", "Models.RegistrationPageAction") >
 			<cfset isValid = formData.validateRegistrationForm()>
 			<cfif isValid EQ "true">

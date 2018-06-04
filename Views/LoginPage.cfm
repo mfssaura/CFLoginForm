@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
-	<script src = "../Js/validateLoginPage.js"></script>
-	<link rel = "stylesheet" href = "../Css/login_page_style.css"/>
+	<script src = "../assets/js/validateLoginPage.js"></script>
+	<link rel = "stylesheet" href = "../assets/css/login_page_style.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
@@ -42,7 +42,7 @@
 				<cfelse>
 					<h5>Opps! Email or Password is incorrect, Please provide the correct details</h5>
 					<h6>New User?</h6>
-					<a href = "RegistrationPageAction.cfm">Click here to go to the registation page</a>
+					<a href = "RegistrationPage.cfm">Click here to go to the registation page</a>
 					<h6>Click here to Login</h6>
 					<a href = "LoginPage.cfm">Click here to login</a>
 				</cfif>
