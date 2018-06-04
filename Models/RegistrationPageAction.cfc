@@ -1,74 +1,41 @@
 <cfcomponent>
-	<cffunction name = "validateRegistrationForm" returntype = "boolean" output = "true">
-		<cfargument name = "firstName" type = "string" required = "true">
-		<cfargument name = "middleName" type = "string" required = "false">
-		<cfargument name = "lastName" type = "string" required = "true">
-		<cfargument name = "gender" type = "string" required = "true">
-		<cfargument name = "dateOfBirth" type = "date" required = "true">
-		<cfargument name = "address" type = "string" required = "true">
-		<cfargument name = "phoneNumber" type = "string" required = "true">
-		<cfargument name = "email" type = "string" required = "true">
-		<cfargument name = "password" type = "string" required = "true">
-		<cfargument name = "confirmPassword" type = "string" required = "true">
-		<cfdump var = "I am here" abort = "true">
-		<cfset flag = true>
-		<cfif not isValid("regex", arguments.firstName, 2, 20, "^[a-zA-Z ]*$")>
-			<cfset flag = false>
-			<cfoutput>
-				Name contains only alphabetic characters
-			</cfoutput>
-		<cfelseif not (arguments.middleName == "")>
-			<cfif isValid("regex", arguments.middleName, 1, 20, "^[a-zA-Z ]*$")>
-				<cfset flag = false>
-				<cfoutput>Name contains only alphabetic characters</cfoutput>
-			</cfif>
-		<cfelseif not isValid("regex", arguments.lastName, 2, 20, "^[a-zA-Z ]*$")>
-			<cfset flag = false>
-			<cfoutput>
-				Name contains only alphabetic characters
-			</cfoutput>
-		<cfelseif not (arguments.gender == "male" or arguments.gender == "female")>
-			<cfset flag = false>
-			<cfoutput>
-				Gender can only be male or female
-			</cfoutput>
-		<cfelseif not isValid("date", arguments.dateOfBirth)>
-			<cfset flag = false>
-			<cfoutput>Invalid dateOfbirth<cfoutput>
-		<cfelseif not isValid("regex", arguments.address, 20, 100, "^[a-zA-Z0-9/-.]*$")>
-			<cfset flag = false>
-			<cfoutput>
-				Enter an address of min 20 chars.
-			</cfoutput>
-		<cfelseif not(len(arguments.phoneNumber) EQ 10)>
-			<cfset flag = false>
-			<cfoutput>
-				Enter a valid phone number
-			</cfoutput>
-		<cfelseif not isValid("email", arguments.email)>
-			<cfset flag = false>
-			<cfoutput>Invalid Email format</cfoutput>
-		<cfelseif not(len(arguments.password) GTE 6 AND len(arguments.password) LTE 20)>
-			<cfset flag = false>
-			<cfoutput>Invalid Password length</cfoutput>
-		<cfelseif not(len(arguments.password) GTE 6 AND len(arguments.password) LTE 20)>
-			<cfset flag = false>
-			<cfoutput>Invalid Password length</cfoutput>
+	<cffunction name = "validateRegistrationForm" returntype = "string" output = "true">
+		<!--- <cfdump var="#FORM#" abort="yes"> --->
+		<cfif not isValid("regex", form.FirstName, "^[a-zA-Z]*$")>
+			<cfreturn "Invalid First Name">
+		<cfelseif form.MiddleName NEQ "" and not isValid("regex", form.MiddleName, "^[a-zA-Z]*$")>
+			<cfreturn "Invalid Middle Name">
+		<cfelseif not isValid("regex", form.LastName, "^[a-zA-Z]*$")>
+			<cfreturn "Invalid Last Name">
+		<cfelseif not (form.UserGender EQ "male" or form.UserGender EQ "female")>
+			<cfreturn "Invalid Gender">
+		<cfelseif not isValid("date", form.BirthDate)>
+			<cfreturn "Invalid DateOfBirth">
+		<cfelseif not(len(form.Address) GTE 10 AND len(form.Address) LTE 100)>
+			<cfreturn "Invalid Address">
+		<cfelseif not(len(form.PhoneNumber) EQ 10)>
+			<cfreturn "Invalid Phone Number">
+		<cfelseif not isValid("email", form.EmailId)>
+			<cfreturn "Invalid Email">
+		<cfelseif not(len(form.Password) GTE 6 AND len(form.Password) LTE 20)>
+			<cfreturn "Invalid Password">
+		<cfelseif not(len(form.ConfirmPassword) GTE 6 AND len(form.ConfirmPassword) LTE 20)>
+			<cfreturn "Invalid Confirm password">
 		</cfif>
-		<cfreturn flag>
+		<cfreturn "true">
 	</cffunction>
 
-	<cffunction name = "insertDataRegistrationForm" returntype = "void" output = "true">
-		<cfargument name = "firstName" type = "string" required = "true">
-		<cfargument name = "middleName" type = "string" required = "false">
-		<cfargument name = "lastName" type = "string" required = "true">
-		<cfargument name = "gender" type = "string" required = "true">
-		<cfargument name = "dateOfBirth" type = "date" required = "true">
-		<cfargument name = "address" type = "string" required = "true">
-		<cfargument name = "phoneNumber" type = "string" required = "true">
-		<cfargument name = "email" type = "string" required = "true">
-		<cfargument name = "password" type = "string" required = "true">
-		<cfargument name = "confirmPassword" type = "string" required = "true">
+	<cffunction name = "insertDataRegistrationForm" returntype = "boolean" output = "true">
+		<!--- <cfargument name = "firstName" type = "string" required = "true"> --->
+<!--- 		<cfargument name = "middleName" type = "string" required = "false"> --->
+<!--- 		<cfargument name = "lastName" type = "string" required = "true"> --->
+<!--- 		<cfargument name = "gender" type = "string" required = "true"> --->
+<!--- 		<cfargument name = "dateOfBirth" type = "date" required = "true"> --->
+<!--- 		<cfargument name = "address" type = "string" required = "true"> --->
+<!--- 		<cfargument name = "phoneNumber" type = "string" required = "true"> --->
+<!--- 		<cfargument name = "email" type = "string" required = "true"> --->
+<!--- 		<cfargument name = "password" type = "string" required = "true"> --->
+<!--- 		<cfargument name = "confirmPassword" type = "string" required = "true"> --->
 
 		<cfset variables.salt = Hash(GenerateSecretKey("AES"), "SHA-512") />
 		<cfset variables.hashedPassword = Hash(form.Password & variables.salt, "SHA-512") />
@@ -80,8 +47,6 @@
 			'#Form.EmailId#','#variables.hashedPassword#', '#variables.hashedPassword#', '#variables.salt#')
 		</cfquery>
 
-		<cfoutput><h2>Registered Successfully</h2></cfoutput>
-	<!--- Redirect to home page --->
-	<!--- <cflocation url = "/HomePage.cfm"> --->
-	<cffunction>
+		<cfreturn true>
+	</cffunction>
 </cfcomponent>
