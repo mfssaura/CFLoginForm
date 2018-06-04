@@ -30,9 +30,9 @@
 			<cfif request.getPwdAndSalt.RecordCount EQ 1>
 				<cfif request.getPwdAndSalt.PASSWORD EQ Hash(arguments.password & request.getPwdAndSalt.SALT, "SHA-512")>
 					<cfreturn true>
-				</cfif>
 				<cfelse>
 					<cfreturn false>
+				</cfif>
 			</cfif>
 			<cfcatch type="any">
 				<cfoutput>Database exception occured</cfoutput>

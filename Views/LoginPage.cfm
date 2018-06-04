@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <head>
-	<srcipt src = "">
+	<script src = "../Js/validateLoginPage.js"></script>
+	<link rel = "stylesheet" href = "../Css/login_page_style.css"/>
 </head>
 <body>
 	<h1>Login</h1>
 	<!--- Login form --->
-	<cfform>
+	<cfform onsubmit = "return validateFormData()" method = "post">
 		<table>
 			<tr>
 				<div class = "field">
 					<td>Email Id:</td>
 					<td><cfinput type = "text" name = "emailId" id = "emailId"></td>
+					<td><div class = "errorfield" id = "emailIdError"></div></td>
 				</div>
 			</tr>
 			<tr>
 	 			<div class = "field">
 	 				<td>Password:</td>
 	 				<td><cfinput type = "password" name = "password" id = "password"></td>
+					<td><div class = "errorfield" id = "passwordError"></div></td>
 	 			</div>
 	 		</tr>
 			<tr>
