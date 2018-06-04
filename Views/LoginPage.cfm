@@ -2,31 +2,34 @@
 <head>
 	<script src = "../Js/validateLoginPage.js"></script>
 	<link rel = "stylesheet" href = "../Css/login_page_style.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
-	<h1>Login</h1>
+	<div class = "formcontainer">
 	<!--- Login form --->
-	<cfform onsubmit = "return validateFormData()" method = "post">
-		<table>
-			<tr>
-				<div class = "field">
-					<td>Email Id:</td>
-					<td><cfinput type = "text" name = "emailId" id = "emailId"></td>
-					<td><div class = "errorfield" id = "emailIdError"></div></td>
-				</div>
-			</tr>
-			<tr>
-	 			<div class = "field">
-	 				<td>Password:</td>
-	 				<td><cfinput type = "password" name = "password" id = "password"></td>
-					<td><div class = "errorfield" id = "passwordError"></div></td>
-	 			</div>
-	 		</tr>
-			<tr>
-				<td><cfinput type = "submit" name = "submit" id = "submit" value = "Login"></td>
-			</tr>
-		</table>
-	</cfform>
+		<h5><u>Login</u></h5>
+		<cfform onsubmit = "return validateFormData()" method = "post">
+			<table>
+				<tr>
+					<div class = "field">
+						<td>Email Id:</td>
+						<td><cfinput type = "text" name = "emailId" class = "input-field" id = "emailId"></td>
+						<td><div class = "errorfield" id = "emailIdError"></div></td>
+					</div>
+				</tr>
+				<tr>
+					<div class = "field">
+						<td>Password:</td>
+						<td><cfinput type = "password" name = "password" class = "input-field" id = "password"></td>
+						<td><div class = "errorfield" id = "passwordError"></div></td>
+					</div>
+				</tr>
+				<tr>
+					<td><cfinput type = "submit" name = "submit" class = "form-submit-button" id = "submit" value = "Login"></td>
+				</tr>
+			</table>
+		</cfform>
+	</div>
 
 	<cfif isDefined("form.submit")>
 		<cfset formData = CreateObject("Component", "Models.LoginPageAction") />
