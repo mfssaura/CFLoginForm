@@ -2,12 +2,15 @@
 <html>
 	<head>
 		<title>Home Page</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
+		<meta charset = "utf-8" />
+		<meta name = "viewport" content = "width=device-width, initial-scale=1" />
+		<link rel = "stylesheet" href = "../assets/css/main.css" />
+        <link rel = "stylesheet" href = "../assets/css/topnav.css"/>
 	</head>
 	<body>
-
+        <div class="topnav">
+            <a href="LoginPage.cfm">Log out</a>
+        </div>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
