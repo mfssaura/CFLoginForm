@@ -5,7 +5,6 @@
 	<cfset This.applicationtimeout = "#createtimespan(5, 0, 0, 0)#">
 
 	<cffunction name = "onApplicationStart">
-
 	</cffunction>
 	<cffunction name = "onApplicationEnd">
 		<cfargument name = "ApplicationScope" required = "true" />
@@ -14,13 +13,16 @@
 	</cffunction>
 	<cffunction name="onSessionStart"> 
 		<cfscript> 
-		Session.started = now(); 
-		Session.shoppingCart = StructNew(); 
-		Session.shoppingCart.items = 0; 
-		</cfscript> 
-		<cflock timeout="5" throwontimeout="No" type="EXCLUSIVE" scope="SESSION"> 
-			<cfset Application.sessions = Application.sessions + 1> 
-		</cflock>  
+			Session.started = now(); 
+			Session.shoppingCart = StructNew(); 
+			Session.shoppingCart.items =0; 
+		</cfscript>  
+		<cflog file="#This.Name#" type="Information" text="Session: #Session.sessionid# started"> 
+	</cffunction> 
+
+	<cffunction name="onSessionEnd"> 
+		<cfargument name = "SessionScope" required=true/> 
+		<cflog file="#This.Name#" type="Information" text="Session: #arguments.SessionScope.sessionid# ended"> 
 	</cffunction> 
 
 

@@ -1,6 +1,5 @@
 <cfcomponent>
 	<cffunction name = "validateRegistrationForm" returntype = "string" output = "true">
-		<!--- 		<cfdump var = "#form#" abort = "yes"> --->
 		<cfif not isValid("regex", form.FirstName, "^[a-zA-Z]*$")>
 			<cfreturn "Invalid First Name">
 		<cfelseif form.MiddleName NEQ "" and not isValid("regex", form.MiddleName, "^[a-zA-Z]*$")>

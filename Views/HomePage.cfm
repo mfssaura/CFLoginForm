@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Visualize by TEMPLATED</title>
+		<title>Home Page</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
@@ -14,7 +14,7 @@
 				<!-- Header -->
 					<header id="header">
 						<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
-						<h1>This is <strong>Visualize</strong>, a responsive site template designed by <a href="http://templated.co">TEMPLATED</a><br />
+						<h1>This is <strong>Home Page</strong>, a responsive site template designed by <a href="http://templated.co">TEMPLATED</a><br />
 						and released for free under the Creative Commons License.</h1>
 						<ul class="icons">
 							<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>

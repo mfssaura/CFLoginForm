@@ -5,14 +5,14 @@
 		<cfset variables.flag = true>
 		<cfset variables.myArray = ArrayNew(1)>
 		<cfif not isValid("email", arguments.email)>
-			<cfset flag = false>
+			<cfset variables.flag = false>
 		</cfif>
 		<cfif len(arguments.password) GTE 6
 					AND len(arguments.password) LTE 20 >
 		<cfelse>
-			<cfset flag = false>
+			<cfset variables.flag = false>
 		</cfif>
-		<cfreturn flag>
+		<cfreturn variables.flag>
 	</cffunction>
 
 	<cffunction name = "checkFormData" returntype = "boolean" output="true">
