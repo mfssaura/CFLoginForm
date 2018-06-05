@@ -8,17 +8,16 @@
         <link rel = "stylesheet" href = "../assets/css/topnav.css"/>
 	</head>
 	<body>
-        <div class="topnav">
-            <a href="LoginPage.cfm">Log out</a>
+        <div class = "topnav">
+            <a href = "LoginPage.cfm" onclick="return confirm('Are you sure?')">Log Out</a>
+            <a href = "AboutPage.cfm">About Page</a>
         </div>
 		<!-- Wrapper -->
 			<div id="wrapper">
-
 				<!-- Header -->
 					<header id="header">
 						<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
-						<h1>This is <strong>Home Page</strong>, a responsive site template designed by <a href="http://templated.co">TEMPLATED</a><br />
-						and released for free under the Creative Commons License.</h1>
+						<h1>This is a <strong>Home Page</strong>, of Art Gallery</h1>
 						<ul class="icons">
 							<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
@@ -36,35 +35,35 @@
 								<div>
 									<a href="../images/fulls/01.jpg">
 										<img src="../images/thumbs/01.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
+										<h3>Wallpaper1</h3>
 									</a>
 									<a href="../images/fulls/02.jpg">
 										<img src="../images/thumbs/02.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
+										<h3>Wallpaper2</h3>
 									</a>
 								</div>
 								<div>
 									<a href="../images/fulls/03.jpg">
 										<img src="../images/thumbs/03.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
+										<h3>Wallpaper3</h3>
 									</a>
 									<a href="../images/fulls/04.jpg">
 										<img src="../images/thumbs/04.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
+										<h3>Wallpaper4</h3>
 									</a>
 									<a href="../images/fulls/05.jpg">
 										<img src="../images/thumbs/05.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
+										<h3>Wallpaper5</h3>
 									</a>
 								</div>
 								<div>
 									<a href="../images/fulls/06.jpg">
 										<img src="../images/thumbs/06.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
+										<h3>Wallpaper6</h3>
 									</a>
 									<a href="../images/fulls/07.jpg">
 										<img src="../images/thumbs/07.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
+										<h3>Wallpaper7</h3>
 									</a>
 								</div>
 							</section>

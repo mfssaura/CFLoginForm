@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<link rel = "stylesheet" href = "../assets/css/login_page_style.css"/>
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel = "stylesheet">
 </head>
 <body>
 	<div class = "formcontainer">
@@ -32,9 +32,9 @@
 
 	<cfif isDefined("form.Submit")>
 		<cfset formData = CreateObject("Component", "Models.LoginPageAction") />
-		<cfset validationStatus = formData.validateLoginForm(email = "#form.EmailId#", password = "#form.Password#") />
+		<cfset validationStatus = formData.ValidateLoginForm(email = "#form.EmailId#", password = "#form.Password#") />
 			<cfif validationStatus EQ true>
-				<cfset userFormData = formData.checkFormData(email = "#form.EmailId#", password = "#form.Password#") />
+				<cfset userFormData = formData.CheckFormData(email = "#form.EmailId#", password = "#form.Password#") />
 
 				<cfif userFormData EQ true>
 					<cflocation url = "HomePage.cfm" addtoken = "false">
