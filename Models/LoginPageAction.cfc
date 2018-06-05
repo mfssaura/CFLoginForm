@@ -1,10 +1,9 @@
 <cfcomponent>
-
 	<cffunction name = "validateLoginForm" returntype = "boolean" output = "false">
 		<cfargument name = "email" type = "string" required = "true">
 		<cfargument name = "password" type = "string" required = "true">
-		<cfset flag = true>
-		<cfset myArray = ArrayNew(1)>
+		<cfset variables.flag = true>
+		<cfset variables.myArray = ArrayNew(1)>
 		<cfif not isValid("email", arguments.email)>
 			<cfset flag = false>
 		</cfif>
@@ -39,5 +38,4 @@
 			</cfcatch>
 		</cftry>
 	</cffunction>
-
 </cfcomponent>

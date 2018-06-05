@@ -54,8 +54,8 @@ function validateForm() {
     if(dateOfBirth != "") {
         var today = new Date();
         var mydate = new Date(dateOfBirth);
-        if(mydate > today) { 
-            document.getElementById("dateOfBirthError").innerHTML = "Date can be in future"; 
+        if(mydate >= today) { 
+            document.getElementById("dateOfBirthError").innerHTML = "Date can't be in future"; 
             return false;
         }
     }

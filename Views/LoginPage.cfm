@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <head>
-	<script src = "../assets/js/validateLoginPage.js"></script>
 	<link rel = "stylesheet" href = "../assets/css/login_page_style.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
@@ -13,29 +12,29 @@
 				<tr>
 					<div class = "field">
 						<td>Email Id:</td>
-						<td><cfinput type = "text" name = "emailId" class = "input-field" id = "emailId"></td>
+						<td><cfinput type = "text" name = "EmailId" class = "input-field" id = "emailId"></td>
 						<td><div class = "errorfield" id = "emailIdError"></div></td>
 					</div>
 				</tr>
 				<tr>
 					<div class = "field">
 						<td>Password:</td>
-						<td><cfinput type = "password" name = "password" class = "input-field" id = "password"></td>
+						<td><cfinput type = "password" name = "Password" class = "input-field" id = "password"></td>
 						<td><div class = "errorfield" id = "passwordError"></div></td>
 					</div>
 				</tr>
 				<tr>
-					<td><cfinput type = "submit" name = "submit" class = "form-submit-button" id = "submit" value = "Login"></td>
+					<td><cfinput type = "submit" name = "Submit" class = "form-submit-button" id = "submit" value = "Login"></td>
 				</tr>
 			</table>
 		</cfform>
 	</div>
 
-	<cfif isDefined("form.submit")>
+	<cfif isDefined("form.Submit")>
 		<cfset formData = CreateObject("Component", "Models.LoginPageAction") />
-		<cfset validationStatus = formData.validateLoginForm(email = "#form.emailId#", password = "#form.password#") />
+		<cfset validationStatus = formData.validateLoginForm(email = "#form.EmailId#", password = "#form.Password#") />
 			<cfif validationStatus EQ true>
-				<cfset userFormData = formData.checkFormData(email = "#form.emailId#", password = "#form.password#") />
+				<cfset userFormData = formData.checkFormData(email = "#form.EmailId#", password = "#form.Password#") />
 
 				<cfif userFormData EQ true>
 					<cflocation url = "HomePage.cfm" addtoken = "false">
@@ -54,5 +53,7 @@
 	<!---  Link to Signup page --->
 	<h4>New User?</h4>
 	<a href = "RegistrationPage.cfm">Register Here</a>
+	<script src = "../assets/js/validateLoginPage.js"></script>
+
 </body>
 </html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <head>
-	<script src = "..assets/js/validateRegistrationForm.js"></script>
 	<link rel="stylesheet" href = "../assets/css/form_style.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
@@ -88,6 +87,7 @@
 				</tr>
 			</table>
 		</cfform>
+		<a href = "LoginPage.cfm">Click here to login</a>
 	</div>
 
 		<cfif isDefined("form.SaveChanges") >
@@ -104,4 +104,5 @@
 			<cfoutput>#isValid#</cfoutput>
 		</cfif>
 	</cfif>
+	<script src = "../assets/js/validateRegistrationForm.js"></script>
 </body>
