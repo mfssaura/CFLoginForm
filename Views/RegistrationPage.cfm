@@ -10,21 +10,21 @@
 				<tr>
 					<div class = "field">
 						<td>First Name:</td>
-						<td><cfinput type = "text" name = "FirstName" class = "input-field" id = "firstName" placeholder = "Enter first Name"></td>
+						<td><cfinput type = "text" name = "firstName" class = "input-field" id = "firstName" placeholder = "Enter first Name"></td>
 						<td><div class = "errorfield" id = "firstNameError"></div></td>
 					</div>
 				</tr>
 				<tr>
 					<div class = "field">
 						<td>Middle Name: </td>
-						<td><cfinput type = "text" name = "MiddleName" class = "input-field" id = "middleName" placeholder = "Enter middle Name"></td>
+						<td><cfinput type = "text" name = "middleName" class = "input-field" id = "middleName" placeholder = "Enter middle Name"></td>
 						<td><div class = "errorfield" id = "middleNameError"></div></td>
 					</div>
 				</tr>
 				<tr>
 					<div class = "field">
 						<td>Last Name: </td>
-						<td><cfinput type = "text" name = "LastName" class = "input-field" id = "lastName" placeholder = "Enter last name"></td>
+						<td><cfinput type = "text" name = "lastName" class = "input-field" id = "lastName" placeholder = "Enter last name"></td>
 						<td><div class = "errorfield" id = "lastNameError"></div></td>
 					</div>
 				</tr>
@@ -32,7 +32,7 @@
 					<div class = "field">
 					<td>Gender:</td>
 					<td>
-						<cfselect name = "UserGender" class = "input-field" id = "UserGender" multiple = "no">
+						<cfselect name = "userGender" class = "input-field" id = "UserGender" multiple = "no">
 							<option value = "male" id = "male" selected>Male</option>
 							<option value = "female" id = "female">Female</option>
 						</cfselect>
@@ -43,54 +43,54 @@
 				<tr>
 					<div class = "field">
 					<td>Date of birth:</td>
-						<td><cfinput type = "date" name = "BirthDate" class = "input-field" id = "birthDate"></td>
+						<td><cfinput type = "date" name = "birthDate" class = "input-field" id = "birthDate"></td>
 					<td><div class = "errorfield" id = "dateOfBirthError"></div></td>
 					</div>
 				</tr>
 				<tr>
 					<div class = "field">
 						<td>Address</td>
-						<td><cfinput type = "text" name = "Address" class = "input-field" id = "address"></td>
+						<td><cfinput type = "text" name = "address" class = "input-field" id = "address"></td>
 						<td><div class = "errorfield" id = "addressError"></div></td>
 					</div>
 				</tr>
 				<tr>
 					<div class = "field">
 						<td>Phone Number:</td>
-						<td><cfinput type = "text" name = "PhoneNumber" class = "input-field" id = "phoneNumber"></td>
+						<td><cfinput type = "text" name = "phoneNumber" class = "input-field" id = "phoneNumber"></td>
 						<td><div class = "errorfield" id = "phoneNumberError"></div></td>
 					</div>
 				</tr>
 				<tr>
 					<div class = "field">
 						<td>Email Id:</td>
-						<td><cfinput type = "text" name = "EmailId" class = "input-field" id = "emailId"></td>
+						<td><cfinput type = "text" name = "emailId" class = "input-field" id = "emailId"></td>
 						<td><div class = "errorfield" id = "emailIdError"></div></td>
 					</div>
 				</tr>
 				<tr>
 		 			<div id = "field">
 		 				<td>Password:</td>
-		 				<td><cfinput type = "password" name = "Password" class = "input-field" id = "password"></td>
+		 				<td><cfinput type = "password" name = "password" class = "input-field" id = "password"></td>
 						<td><div class = "errorfield" id = "passwordError"></div></td>
 		 			</div>
 		 		</tr>
 		 		<tr>
 		 			<div class = "field">
 		 				<td>Confirm Password:</td>
-		 				<td><cfinput type = "password" name = "ConfirmPassword" class = "input-field" id = "confirmPassword"></td>
+		 				<td><cfinput type = "password" name = "confirmPassword" class = "input-field" id = "confirmPassword"></td>
 		 				<td><div class = "errorfield" id = "confirmPasswordError"></div></td>
 		 			</div>
 		 		</tr>
 				<tr>
-					<td><cfinput type = "submit" name = "SaveChanges" class = "form-submit-button" value = "Submit"></td>
+					<td><cfinput type = "submit" name = "saveChanges" class = "form-submit-button" value = "Submit"></td>
 				</tr>
 			</table>
 		</cfform>
 		<a href = "LoginPage.cfm">Click here to login</a>
 	</div>
 
-		<cfif isDefined("form.SaveChanges") >
+		<cfif isDefined("form.saveChanges") >
 			<cfset formData = CreateObject("Component", "Models.RegistrationPageAction") >
 			<cfset isValid = formData.validateRegistrationForm()>
 			<cfif isValid EQ "true">

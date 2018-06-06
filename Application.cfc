@@ -13,16 +13,16 @@
 	<cffunction name = "onRequestStart">
 	</cffunction>
 
-	<cffunction name="onSessionStart"> 
+	<cffunction name = "onSessionStart"> 
 		<cfscript> 
 			Session.started = now(); 
 			Session.shoppingCart = StructNew(); 
 			Session.shoppingCart.items = 0; 
 		</cfscript>  
-		<cflog file="#This.Name#" type="Information" text="Session: #Session.sessionid# started"> 
+		<cflog file = "#This.Name#" type = "Information" text = "Session: #Session.sessionid# started"> 
 	</cffunction> 
 
-	<cffunction name="onSessionEnd"> 
+	<cffunction name = "onSessionEnd"> 
 		<cfargument name = "SessionScope" required = true/> 
 		<cflog file = "#This.Name#" type = "Information" text = "Session: #arguments.SessionScope.sessionid# ended"> 
 	</cffunction> 

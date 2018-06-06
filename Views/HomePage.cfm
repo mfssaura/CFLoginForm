@@ -16,7 +16,12 @@
 			<div id="wrapper">
 				<!-- Header -->
 					<header id="header">
-						<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
+                        <!--- <cfquery name = "getUserName" datasource = "cfartgallery">
+                            SELECT FIRSTNAME
+                            FROM USERS
+                            WHERE EMAILID = <cfqueryparam cfsqltype = "cf_sql_varchar" value = "#form.emailId#">
+                        </cfquery> --->
+                        <!--- <cfdump  var="#form#"> --->
 						<h1>This is a <strong>Home Page</strong>, of Art Gallery</h1>
 						<ul class="icons">
 							<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>

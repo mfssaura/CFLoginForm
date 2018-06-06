@@ -12,29 +12,29 @@
 				<tr>
 					<div class = "field">
 						<td>Email Id:</td>
-						<td><cfinput type = "text" name = "EmailId" class = "input-field" id = "emailId"></td>
+						<td><cfinput type = "text" name = "emailId" class = "input-field" id = "emailId"></td>
 						<td><div class = "errorfield" id = "emailIdError"></div></td>
 					</div>
 				</tr>
 				<tr>
 					<div class = "field">
 						<td>Password:</td>
-						<td><cfinput type = "password" name = "Password" class = "input-field" id = "password"></td>
+						<td><cfinput type = "password" name = "password" class = "input-field" id = "password"></td>
 						<td><div class = "errorfield" id = "passwordError"></div></td>
 					</div>
 				</tr>
 				<tr>
-					<td><cfinput type = "submit" name = "Submit" class = "form-submit-button" id = "submit" value = "Login"></td>
+					<td><cfinput type = "submit" name = "submit" class = "form-submit-button" id = "submit" value = "Login"></td>
 				</tr>
 			</table>
 		</cfform>
 	</div>
 
-	<cfif isDefined("form.Submit")>
+	<cfif isDefined("form.submit")>
 		<cfset formData = CreateObject("Component", "Models.LoginPageAction") />
-		<cfset validationStatus = formData.ValidateLoginForm(email = "#form.EmailId#", password = "#form.Password#") />
+		<cfset validationStatus = formData.ValidateLoginForm(email = "#form.emailId#", password = "#form.password#") />
 			<cfif validationStatus EQ true>
-				<cfset userFormData = formData.CheckFormData(email = "#form.EmailId#", password = "#form.Password#") />
+				<cfset userFormData = formData.CheckFormData(email = "#form.emailId#", password = "#form.password#") />
 
 				<cfif userFormData EQ true>
 					<cflocation url = "HomePage.cfm" addtoken = "false">

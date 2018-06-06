@@ -9,7 +9,7 @@
 	</head>
 	<body>
         <div class = "topnav">
-            <a href = "LoginPage.cfm">Log Out</a>
+            <a href = "LoginPage.cfm" onclick = "return confirm('Are you sure?')">Log Out</a>
             <a href = "HomePage.cfm">Home Page</a>
         </div>
 		<!-- Wrapper -->
@@ -17,7 +17,6 @@
 
 				<!-- Header -->
 					<header id="header">
-						<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
 						<h1>This is an about page</h1>
 						<ul class="icons">
 							<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
