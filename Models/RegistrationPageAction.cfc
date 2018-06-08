@@ -1,5 +1,11 @@
 <cfcomponent>
 	<cffunction name = "validateRegistrationForm" returntype = "string" output = "true">
+		<cfquery name = "getEmail" datasource = "cfartgallery">
+			SELECT EMAILID
+			FROM Users
+			WHERE EMAILID = '#form.emailId#'
+		</cfquery>
+		
 		<cfif not isValid("regex", form.firstName, "^[a-zA-Z]*$")>
 			<cfreturn "Invalid First Name">
 		<cfelseif form.MiddleName NEQ "" and not isValid("regex", form.middleName, "^[a-zA-Z]*$")>
@@ -16,6 +22,8 @@
 			<cfreturn "Invalid Phone Number">
 		<cfelseif not isValid("email", form.emailId)>
 			<cfreturn "Invalid Email">
+		<cfelseif not "#getEmail.EMAILID#" EQ "">
+			<cfreturn "Email Already Exists">
 		<cfelseif not(len(form.password) GTE 6 AND len(form.password) LTE 20)>
 			<cfreturn "Invalid Password">
 		<cfelseif not(len(form.confirmPassword) GTE 6 AND len(form.confirmPassword) LTE 20)>
